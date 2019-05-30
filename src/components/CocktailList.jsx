@@ -1,10 +1,13 @@
 import React from 'react';
 
 const CocktailList = props =>{
+  console.log(props.cocktail)
   return(
     <div>
-      <img src={props.strDrinkThumb} />
-      <h3>{props.strDrink}</h3>
+      <img
+      alt={props.strDrink}
+      src={props.photo} />
+      <h3>{props.name}</h3>
     </div>
     )
 }

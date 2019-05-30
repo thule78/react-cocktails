@@ -21,7 +21,7 @@ class App extends Component {
   };
 
   render(){
-    const render = this.state.cocktails.map(cocktail => <CocktailList key={cocktail.idDrink} cocktail={cocktail}/>)
+    const render = this.state.cocktails.map(cocktail => <CocktailList key={cocktail.idDrink} name={cocktail.strDrink} photo={cocktail.strDrinkThumb}/>)
     return(
        <React.Fragment>
         <h1>Hello Cocktails</h1>
