@@ -1,18 +1,21 @@
 import React from 'react';
 
-const CocktailList = props =>{
+import CocktailItem from './CocktailItem';
+
+const CocktailList = (props) =>{
+  console.log(props.list);
+  const renderCocktails = props.list.map(cocktail=>
+        <CocktailItem
+          key={cocktail.idDrink}
+          cocktail={cocktail.strDrinkThumb}
+          id={cocktail.idDrink}
+          selectCocktail={props.selectedCocktail}
+
+            />)
+  console.log(renderCocktails);
   return(
     <div className="col-sm-3">
-      <a href="#">
-        <div className="card">
-          <img className="card-img-top"
-            alt={props.name}
-            src={props.photo} />
-            <div className="card-body">
-            <h5 className="card-title">{props.name}</h5>
-            </div>
-        </div>
-      </a>
+      {renderCocktails}
     </div>
     )
 }
