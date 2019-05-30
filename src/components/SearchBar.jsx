@@ -12,9 +12,11 @@ class SearchBar extends Component{
 
   handleSubmit = (e)=>{
     e.preventDefault();
+    this.props.onThisChange(this.state.term)
   }
 
   render(){
+    console.log(this.state.term);
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
