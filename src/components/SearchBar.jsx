@@ -19,8 +19,16 @@ class SearchBar extends Component{
     console.log(this.state.term);
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.term} onChange={this.handleChange}/>
+        <form  onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              value={this.state.term}
+              onChange={this.handleChange}
+            />
+            <small className="form-text text-muted">Main Ingredient: Rum, Voldka, ect...</small>
+          </div>
         </form>
       </div>
       )

@@ -24,10 +24,12 @@ class App extends Component {
     const render = this.state.cocktails.map(cocktail => <CocktailList key={cocktail.idDrink} name={cocktail.strDrink} photo={cocktail.strDrinkThumb}/>)
     return(
        <React.Fragment>
-        <h1>Hello Cocktails</h1>
-        <SearchBar onThisChange={this.handleSubmitChange}/>
-        <CocktailList />
-        {render}
+        <div className="container">
+          <h1>Hello Cocktails</h1>
+          <SearchBar onThisChange={this.handleSubmitChange}/>
+          <div className="row">{render}</div>
+        </div>
+
        </React.Fragment>
 
       )
