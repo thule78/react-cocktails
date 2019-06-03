@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import App from './components/App'
+import Nav from './components/Nav'
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Nav />, document.getElementById('root'));
 
