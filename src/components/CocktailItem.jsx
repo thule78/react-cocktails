@@ -16,29 +16,42 @@ class CocktailItem extends Component{
 
   render(){
     const thiscocktail = this.state.activeCocktail ;
-    console.log(thiscocktail);
     return (
-      <div>
-        <h2>{thiscocktail.strDrink}</h2>
-        <img src={thiscocktail.strDrinkThumb} />
-        <h3>Glass: {thiscocktail.strGlass}</h3>
-        <ul>
-          <h4>Ingredients:</h4>
-          <li>{thiscocktail.strIngredient1}: {thiscocktail.strMeasure1 }</li>
-          <li>{thiscocktail.strIngredient2}: {thiscocktail.strMeasure2 }</li>
-          <li>{thiscocktail.strIngredient3}: {thiscocktail.strMeasure3 }</li>
-          <li>{thiscocktail.strIngredient4}: {thiscocktail.strMeasure4 }</li>
-          <li>{thiscocktail.strIngredient5}: {thiscocktail.strMeasure5 }</li>
-          <li>{thiscocktail.strIngredient6}: {thiscocktail.strMeasure6 }</li>
-          <li>{thiscocktail.strIngredient7}: {thiscocktail.strMeasure7 }</li>
-          <li>{thiscocktail.strIngredient8}: {thiscocktail.strMeasure8 }</li>
-        </ul>
-        <button className="btn btn-outline-secondary">
-              <Link to={{
-                  pathname: "/"
-                }}>Make New Cocktail</Link>
-            </button>
+    <div className="container">
+      <div className="card mb-3">
+        <div className="row">
+          <div className="col-md-4 mt-3">
+          <img className="card-img" src={thiscocktail.strDrinkThumb} alt={thiscocktail.strDrink}/>
+          <button className="btn btn-outline-secondary mt-3 col-md-12">
+            <Link to="/" >Back to the list</Link>
+          </button>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h2>{thiscocktail.strDrink}</h2>
+          <h4>Glass: {thiscocktail.strGlass}</h4>
+          <strong>Ingredients:</strong>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">{thiscocktail.strIngredient1}: {thiscocktail.strMeasure1 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient2}: {thiscocktail.strMeasure2 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient3}: {thiscocktail.strMeasure3 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient4}: {thiscocktail.strMeasure4 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient5}: {thiscocktail.strMeasure5 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient6}: {thiscocktail.strMeasure6 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient7}: {thiscocktail.strMeasure7 }</li>
+            <li className="list-group-item">{thiscocktail.strIngredient8}: {thiscocktail.strMeasure8 }</li>
+          </ul>
+          <p>{thiscocktail.strInstructions}</p>
+
+          </div>
+
+        </div>
+        </div>
+
       </div>
+
+    </div>
+
       )
   }
 }

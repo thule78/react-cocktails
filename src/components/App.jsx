@@ -9,10 +9,23 @@ class App extends Component{
     cocktails:[]
   }
 
+
+
   handleSubmitChange = async query => {
     const response = await axios
       .get(`https://www.thecocktaildb.com/api/json/v2/8673533/filter.php?i=${query}`)
       this.setState({cocktails: response.data.drinks})
+  }
+
+  componentDidMount = () => {
+    const json = localStorage.getItem("cocktails");
+    const jsonCocktails = JSON.parse(json);
+    this.setState({cocktails: jsonCocktails});
+  }
+
+  componentDidUpdate = () =>{
+    const cocktails = JSON.stringify(this.state.cocktails);
+    localStorage.setItem("cocktails", cocktails);
   }
 
   render(){
